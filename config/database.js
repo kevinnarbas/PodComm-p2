@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
-var db = mongoose.connect;
+var db = mongoose.connection;
 
-mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useCreateIndex: true});
 
 db.on('connected', function() {
-    console.log(`Connected to: ${process.env.DATABASE_URL}`);
+  console.log(`MongoDB at ${process.env.DATABASE_URL}`);
 });
 
 module.exports = mongoose;
