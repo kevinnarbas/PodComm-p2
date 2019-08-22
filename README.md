@@ -23,4 +23,4 @@ Inspiration for this app came from my love of podcasts and not finding a hub for
 ---
 
 ## ERD 
-![Imgur](https://i.imgur.com/ezZ7M9J.png)
+![Imgur](https://i.imgur.com/fDIOZmp.png)
