@@ -7,6 +7,7 @@ module.exports = {
   search,
   create,
   show,
+  addReview,
 }
 
 function index(req, res) {
@@ -56,4 +57,8 @@ function show(req, res) {
         });
         console.log(req.user)
     });
+}
+
+function addReview(req, res) {
+    
 }

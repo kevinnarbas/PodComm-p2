@@ -17,6 +17,6 @@ var podcastSchema = new Schema({
   hostCount: {type: Number, min: 1, default: 1},
   guest: {type: String, enum: ['Every Episode', 'Never', 'Sometimes'], default: 'Never'},
   reviews: [reviewSchema],
-});
+},{timestamps: true});
 
 module.exports = mongoose.model('Podcast', podcastSchema);
