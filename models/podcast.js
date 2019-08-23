@@ -15,7 +15,7 @@ var podcastSchema = new Schema({
     'Society/Culture', 'Education', 'Fiction', 'Government', 'Health/Fitness', 'Kids/Family', 'Music',
     'Religion/Spirituality', 'Science', 'Technology', 'Tv/Film'], required: true},
   hostCount: {type: Number, min: 1, default: 1},
-  guest: {type: String, enum: ['Yes', 'No', 'Sometimes'], default: 'No'},
+  guest: {type: String, enum: ['Every Episode', 'Never', 'Sometimes'], default: 'Never'},
   reviews: [reviewSchema],
 });
 

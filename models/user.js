@@ -5,6 +5,7 @@ var userSchema = Schema({
   name: String,
   email: String,
   googleId: String,
+  podcasts: [{type: Schema.Types.ObjectId, ref:'Podcast'}],
 
 },{timestamps: true});
 

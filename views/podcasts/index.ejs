@@ -5,4 +5,12 @@
 <a href="/podcasts/new" class="button button-primary">Add a podcast</a>
 <a href="/podcasts/search" class="button button-primary">Search podcasts</a>
 
+<ul>
+  <% podcasts.forEach(function(p) { %>
+    <li><%= p.title %>
+    <a href="podcasts/<%= p.id %>" class="button"></a>
+    </li>
+  <% }); %>
+</ul>
+
 <%- include('../partials/footer') %>

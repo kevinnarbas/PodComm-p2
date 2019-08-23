@@ -6,50 +6,54 @@ module.exports = {
   new: newPodcast,
   search,
   create,
+  show,
 }
 
 function index(req, res) {
-  User.find({}, function(err, users) {
+  Podcast.find({}, function(err, podcasts) {
     if (err) return next(err);
     res.render('podcasts/index', {
-      title: 'PodComm',
-      users,
-      user: req.user,
+        title: 'PodComm',
+        user: req.user,
+        podcasts,
     });
   });
 }
 
 function newPodcast(req, res) {
-  User.find({}, function(err, users) {
     res.render('podcasts/new', {
         title: 'PodComm',
-        users,
         user: req.user,
     });
-  });
 }
 
 function search(req, res) {
-    User.find({}, function(err, users) {
-        console.log(req.user)
-        res.render('podcasts/search', {
-            title: 'PodComm',
-            users,
-            user: req.user,
-        })
+    console.log(req.user)
+    res.render('podcasts/search', {
+        title: 'PodComm',
+        user: req.user,
     })
 }
 
 function create(req, res) {
-    User.find({}, function(err, users) {
-        console.log(req.user)
-        for (let key in req.body) {
-            if (req.body[key] === '') delete req.body[key];
-        }
-        var podcast = new Podcast(req.body)
-        podcast.save(function(err) {
-            console.log(podcast);
-            res.redirect('/podcasts');
+    console.log(req.user)
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key];
+    }
+    var podcast = new Podcast(req.body)
+    podcast.save(function(err) {
+        console.log(podcast);
+        res.redirect('/podcasts');
+    });
+}
+
+function show(req, res) {
+    Podcast.findById(req.params.id, function(err, podcasts) {
+        res.render('podcasts/show', {
+            podcasts,
+            title: 'PodComm',
+            user: req.user
         });
+        console.log(req.user)
     });
 }

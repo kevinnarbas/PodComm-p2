@@ -3,10 +3,17 @@ var router = express.Router();
 var podcastCtrl = require('../controllers/podcasts');
 
 
-router.get('/', podcastCtrl.index);
-router.get('/new', podcastCtrl.new);
-router.get('/search', podcastCtrl.search);
-router.post('/', podcastCtrl.create);
+router.get('/',isLoggedIn, podcastCtrl.index);
+router.get('/new',isLoggedIn, podcastCtrl.new);
+router.get('/search',isLoggedIn, podcastCtrl.search);
+router.get('/:id',isLoggedIn, podcastCtrl.show);
+router.post('/',isLoggedIn, podcastCtrl.create);
 
+
+
+function isLoggedIn(req, res, next) {
+  if ( req.isAuthenticated() ) return next();
+  res.redirect('/auth/google');
+}
 
 module.exports = router;
