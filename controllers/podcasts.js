@@ -3,17 +3,53 @@ var User = require('../models/user');
 
 module.exports = {
   index,
+  new: newPodcast,
+  search,
+  create,
 }
 
 function index(req, res) {
-    let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
-    User.find(modelQuery, function(err, users) {
-      if (err) return next(err);
-      res.render('podcasts/index', {
+  User.find({}, function(err, users) {
+    if (err) return next(err);
+    res.render('podcasts/index', {
+      title: 'PodComm',
+      users,
+      user: req.user,
+    });
+  });
+}
+
+function newPodcast(req, res) {
+  User.find({}, function(err, users) {
+    res.render('podcasts/new', {
         title: 'PodComm',
         users,
         user: req.user,
-        name: req.query.name,
-      });
+    });
+  });
+}
+
+function search(req, res) {
+    User.find({}, function(err, users) {
+        console.log(req.user)
+        res.render('podcasts/search', {
+            title: 'PodComm',
+            users,
+            user: req.user,
+        })
+    })
+}
+
+function create(req, res) {
+    User.find({}, function(err, users) {
+        console.log(req.user)
+        for (let key in req.body) {
+            if (req.body[key] === '') delete req.body[key];
+        }
+        var podcast = new Podcast(req.body)
+        podcast.save(function(err) {
+            console.log(podcast);
+            res.redirect('/podcasts');
+        });
     });
 }

@@ -7,12 +7,15 @@ var reviewSchema = new Schema({
 }, {timestamps: true});
 
 var podcastSchema = new Schema({
-  length: String,
-  seasons: {type: Number, min: 1},
-  type: {type: String, enum: ['Random', 'Informational', 'Storytelling']},
-  genre: {type: String, enum: ['Horror', 'Comedey', 'Business', 'Arts', 'History', 'Sports', 'True Crime']},
-  hostCount: {type: Number, min: 1},
-  guest: {type: String, enum: ['Yes', 'No', 'Sometimes']},
+  title: {type: String, required: true},
+  length: {type: String, match: /\d:[0-5]\d/, default: '1:00'},
+  seasons: {type: Number, min: 1, default: 1},
+  type: {type: String, enum: ['Random', 'Informational', 'Storytelling'], default: 'Random'},
+  genre: {type: String, enum: ['Horror', 'Comedy', 'Business', 'Arts', 'History', 'Sports', 'True Crime', 'News',
+    'Society/Culture', 'Education', 'Fiction', 'Government', 'Health/Fitness', 'Kids/Family', 'Music',
+    'Religion/Spirituality', 'Science', 'Technology', 'Tv/Film'], required: true},
+  hostCount: {type: Number, min: 1, default: 1},
+  guest: {type: String, enum: ['Yes', 'No', 'Sometimes'], default: 'No'},
   reviews: [reviewSchema],
 });
 
