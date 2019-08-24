@@ -37,7 +37,6 @@ function search(req, res) {
 }
 
 function create(req, res) {
-    console.log(req.user)
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
@@ -46,7 +45,9 @@ function create(req, res) {
         console.log(podcast);
         res.redirect('/podcasts');
     });
-}
+    console.log(req.user)
+    
+} 
 
 function show(req, res) {
     Podcast.findById(req.params.id, function(err, podcasts) {

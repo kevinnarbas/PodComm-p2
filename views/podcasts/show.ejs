@@ -11,7 +11,46 @@
     <li>Host Count: <%= podcasts.hostCount %></li>
     <li>Guests?: <%= podcasts.guest %></li>
 </ul>
+<hr>
+<% if (podcasts.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date:</th>
+        <th>Review:</th>
+        <th>Rating:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% podcasts.reviews.forEach(function(p) { %>
+        <tr>
+          <td><%= p.createdAt.toLocaleDateString() %></td>
+          <td><%= p.review %></td>
+          <td><%= p.rating %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>Not Yet Enriched</h5>
+<% } %>
 
+
+<form action="/podcasts/<%= podcasts._id %>/reviews" method="POST">
+  <div class="row">
+  <textarea name="text" class="six columns" placeholder='Enhance your "pea" with a review!'></textarea>
+  </div>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input type="submit" class="button button-primary">
+</form>
 <a href="/podcasts" class="button button-primary">Go Back</a>
+
 
 <%- include('../partials/footer') %>
