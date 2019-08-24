@@ -8,7 +8,7 @@ function create(req, res) {
   Podcast.findById(req.params.id, function(err, podcasts) {
     podcasts.reviews.push(req.body)
     podcasts.save(function(err) {
-      res.redirect(`podcasts/${podcasts._id}`)
+      res.redirect(`/podcasts/${podcasts._id}`)
     });
   });
 }

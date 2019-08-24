@@ -25,7 +25,7 @@
       <% podcasts.reviews.forEach(function(p) { %>
         <tr>
           <td><%= p.createdAt.toLocaleDateString() %></td>
-          <td><%= p.review %></td>
+          <td><%= p.content %></td>
           <td><%= p.rating %></td>
         </tr>
       <% }); %>
@@ -38,7 +38,7 @@
 
 <form action="/podcasts/<%= podcasts._id %>/reviews" method="POST">
   <div class="row">
-  <textarea name="text" class="six columns" placeholder='Enhance your "pea" with a review!'></textarea>
+  <textarea name="content" class="six columns" placeholder='Enhance your "pea" with a review!'></textarea>
   </div>
   <label>Rating:</label>
   <select name="rating">
