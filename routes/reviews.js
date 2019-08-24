@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var reviewsCtrl = require('../controllers/reviews');
 
-router.get('/')
+router.post('/podcasts/:id/reviews', reviewsCtrl.create)
 
 
 
