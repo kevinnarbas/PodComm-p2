@@ -73,9 +73,16 @@ function search(req, res, next) {
 }
 
 function delPod(req, res) {
-    Podcast.findByIdAndDelete(req.params.id, function(err, podcast) {
-        console.log('look here', req.user);
-        res.redirect('/podcasts')
+    Podcast.findByIdAndDelete(req.params.id, function(err) {
+        User.findById(req.user._id, function(err, user) {
+            var podIdx = user.podcasts.indexOf(req.params.id)
+            user.podcasts.splice(podIdx, 1);
+            user.save(function(err) {
+                console.log(podIdx)
+                console.log('look here', req.user);
+                res.redirect('/podcasts')
+            });
+        });
 
     });
 }
