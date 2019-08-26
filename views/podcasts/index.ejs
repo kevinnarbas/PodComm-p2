@@ -1,12 +1,15 @@
 <%- include('../partials/header') %>
 
-
-<h3><%= podcasts.length %> Peas Your Pod!</h3>
+<% if (peas.podcasts.length === 1) { %>
+  <h3><%= peas.podcasts.length %> Pea In Your Pod!</h3>
+<% } else { %>
+  <h3><%= peas.podcasts.length %> Peas In Your Pod!</h3>
+<% } %>
 <a href="/podcasts/new" class="button button-primary">Add a podcast</a>
 <a href="/podcasts/search" class="button button-primary">Search podcasts</a>
 
 <ul>
-  <% podcasts.forEach(function(p) { %>
+  <% peas.podcasts.forEach(function(p) { %>
     <li><%= p.title %>
     <a href="podcasts/<%= p.id %>" class="button"></a>
     </li>

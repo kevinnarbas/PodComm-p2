@@ -11,12 +11,12 @@ module.exports = {
 }
 
 function index(req, res) {
-  Podcast.find({}, function(err, podcasts) {
-    if (err) return next(err);
+  User.findById(req.user._id).populate('podcasts').exec(function(err, peas) {
+    console.log(peas);
     res.render('podcasts/index', {
         title: 'PodComm',
         user: req.user,
-        podcasts,
+        peas,
     });
   });
 }
@@ -29,16 +29,20 @@ function newPodcast(req, res) {
 }
 
 function create(req, res) {
+    
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
     var podcast = new Podcast(req.body)
+    req.user.podcasts.push(podcast._id);
     podcast.save(function(err) {
-        console.log(podcast);
-        res.redirect('/podcasts');
+        req.user.save(function(err) {
+            console.log(podcast);
+            console.log(podcast._id)
+            console.log(req.user)
+            res.redirect('/podcasts');
+        });
     });
-    console.log(req.user)
-    
 } 
 
 function show(req, res) {
