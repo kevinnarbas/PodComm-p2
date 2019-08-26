@@ -74,11 +74,8 @@ function search(req, res, next) {
 
 function delPod(req, res) {
     Podcast.findByIdAndDelete(req.params.id, function(err, podcast) {
-        User.podcast.find(req.params.id, function(err, userpod) {
-            console.log('look here', req.user);
-            console.log(userpod);
-            res.redirect('/podcasts')
+        console.log('look here', req.user);
+        res.redirect('/podcasts')
 
-        });
     });
 }
