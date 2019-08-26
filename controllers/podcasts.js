@@ -66,15 +66,16 @@ function addReview(req, res) {
 }
 
 function search(req, res, next) {
-    console.log(req.query)
-    let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
+    let modelQuery = req.query.podTitle ? {title: new RegExp(req.query.podTitle, 'i')} : {};
     Podcast.find(modelQuery, function(err, podcasts) {
-      if (err) return next(err);
-      res.render('podcasts/search', { 
-        podcasts, 
-        title: 'PodComm',
-        user: req.user,
-        podTitle: req.query.title,
-      });
+        if (err) return next(err);
+        res.render('podcasts/search', { 
+            podcasts, 
+            title: 'PodComm',
+            user: req.user,
+            podTitle: req.query.podTitle,
+        });
     });
+    console.log(modelQuery)
+    console.log(req.query.podTitle)
   }
