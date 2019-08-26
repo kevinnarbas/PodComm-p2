@@ -7,7 +7,6 @@ module.exports = {
   search,
   create,
   show,
-  addReview,
   search,
 }
 
@@ -28,14 +27,6 @@ function newPodcast(req, res) {
         user: req.user,
     });
 }
-
-// function search(req, res) {
-//     console.log(req.user)
-//     res.render('podcasts/search', {
-//         title: 'PodComm',
-//         user: req.user,
-//     })
-// }
 
 function create(req, res) {
     for (let key in req.body) {
@@ -59,10 +50,6 @@ function show(req, res) {
         });
         console.log(req.user)
     });
-}
-
-function addReview(req, res) {
-    
 }
 
 function search(req, res, next) {
