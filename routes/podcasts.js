@@ -8,6 +8,7 @@ router.get('/new',isLoggedIn, podcastCtrl.new);
 router.get('/search',isLoggedIn, podcastCtrl.search);
 router.get('/:id',isLoggedIn, podcastCtrl.show);
 router.post('/',isLoggedIn, podcastCtrl.create);
+router.delete('/:id', isLoggedIn, podcastCtrl.delPod);
 
 
 
