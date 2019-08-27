@@ -49,3 +49,32 @@ nav ul li {
   position: relative;
   top: 9px;
 }
+
+.search-items {
+  background-color: #D6FFD8;
+  height: 29vh;
+  margin: 2px;
+  padding: 24px 0 0 24px;
+  overflow: scroll;
+}
+
+.search-items li {
+  list-style-type: none;
+}
+
+.latest-review {
+  display: none;
+}
+
+.latest-review:last-child {
+  display: contents;
+}
+
+.search-name {
+  text-transform: capitalize;
+}
+
+.user-index {
+  list-style: none;
+  text-transform: capitalize; 
+}

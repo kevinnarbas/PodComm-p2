@@ -8,14 +8,16 @@
 <a href="/podcasts/new" class="button button-primary">Add a podcast</a>
 <a href="/podcasts/search" class="button button-primary">Search podcasts</a>
 
-<ul>
+<ul class="row user-index">
   <% peas.podcasts.forEach(function(p) { %>
-    <li>
+    <li class="four columns">
       <form action="podcasts/<%= p.id %>?_method=DELETE" method="POST">
+      <h4><%= p.title %></h4>
       <input type="submit" value="Delete">
-      </form>
-      <%= p.title %>
+      <a href="podcasts/<%= p.id %>/edit" class="button">Edit Pea</a>
       <a href="podcasts/<%= p.id %>" class="button">Pea Deets</a>
+      
+    </form>
     </li>
   <% }); %>
 </ul>

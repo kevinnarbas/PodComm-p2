@@ -9,6 +9,8 @@ module.exports = {
   show,
   search,
   delPod,
+  update,
+  edit,
 }
 
 function index(req, res) {
@@ -61,6 +63,7 @@ function search(req, res, next) {
     let modelQuery = req.query.podTitle ? {title: new RegExp(req.query.podTitle, 'i')} : {};
     Podcast.find(modelQuery, function(err, podcasts) {
         if (err) return next(err);
+        console.log('looky here',podcasts);
         res.render('podcasts/search', { 
             podcasts, 
             title: 'PodComm',
@@ -69,7 +72,6 @@ function search(req, res, next) {
         });
     });
     console.log(modelQuery)
-    console.log(req.query.podTitle)
 }
 
 function delPod(req, res) {
@@ -83,6 +85,30 @@ function delPod(req, res) {
                 res.redirect('/podcasts')
             });
         });
+    });
+}
 
+function edit(req, res) {
+    Podcast.findById(req.params.id, function(err, podcasts) {
+        res.render('podcasts/edit', {
+        podcasts, 
+        title: 'PodComm',
+        user: req.user,
+        });
+    });
+}
+
+function update(req, res) {
+    Podcast.findByIdAndUpdate(req.params.id, function(err, podcast) {
+        podcast.title = req.body.title;
+        podcast.length = req.body.length;
+        podcast.seasons = req.body.seasons;
+        podcast.type = req.body.type;
+        podcast.genre = req.body.genre;
+        podcast.hostCount = req.body.hostCount;
+        podcast.guest = req.body.guest;
+        podcast.save(function(err) {
+            res.redirect(`/podcasts/${podcasts._id}`);
+        });
     });
 }

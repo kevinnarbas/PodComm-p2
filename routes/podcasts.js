@@ -7,7 +7,9 @@ router.get('/',isLoggedIn, podcastCtrl.index);
 router.get('/new',isLoggedIn, podcastCtrl.new);
 router.get('/search',isLoggedIn, podcastCtrl.search);
 router.get('/:id',isLoggedIn, podcastCtrl.show);
+router.get('/:id/edit', isLoggedIn, podcastCtrl.edit),
 router.post('/',isLoggedIn, podcastCtrl.create);
+router.put('/:id', isLoggedIn, podcastCtrl.update);
 router.delete('/:id', isLoggedIn, podcastCtrl.delPod);
 
 
