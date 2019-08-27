@@ -17,7 +17,6 @@
         <li>Type: <%= p.type %></li>
         <li>Host Count: <%= p.hostCount %></li>
         <li>Guests? <%= p.guest %></li>
-        <li class="search-name">Reviewed by: <%= user.name %> </li>
         <% p.reviews.forEach(function(r) { %>
           <li class="latest-review">Latest Review: <%= r.content.charAt(0).toUpperCase() + r.content.slice(1) %> <%= r.rating %> rating!</li>
           <% }) %>
