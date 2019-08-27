@@ -38,7 +38,7 @@
 
 <form action="/podcasts/<%= podcasts._id %>/reviews" method="POST">
   <div class="row">
-  <textarea name="content" class="six columns" placeholder='Enrich your "pea" with a review! - Add information like the season or episode to enrich your pea even more!'></textarea>
+  <textarea name="content" class="six columns" placeholder='Enrich your "pea" with a review! - Add information like the season or episode to enrich your pea even more! Only the last review will appear in search'></textarea>
   </div>
   <label>Rating:</label>
   <select name="rating">
@@ -50,7 +50,12 @@
   </select>
   <input type="submit" class="button button-primary">
 </form>
-<a href="/podcasts" class="button button-primary">Go Back</a>
-
+<div class="show-button">
+  <a href="/podcasts" class="button button-primary">Go Back</a>
+  <a href="/podcasts/<%= podcasts.id %>/edit" class="button">Edit Pea</a>
+  <form action="/podcasts/<%= podcasts.id %>?_method=DELETE" method="POST">
+  <input type="submit" value="Delete">
+  </form>
+</div>
 
 <%- include('../partials/footer') %>

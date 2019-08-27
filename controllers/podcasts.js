@@ -17,7 +17,7 @@ function index(req, res) {
   User.findById(req.user._id).populate('podcasts').exec(function(err, peas) {
     console.log(peas);
     res.render('podcasts/index', {
-        title: 'PodComm',
+        title: 'Your Homepage',
         user: req.user,
         peas,
     });
@@ -99,16 +99,8 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-    Podcast.findByIdAndUpdate(req.params.id, function(err, podcast) {
-        podcast.title = req.body.title;
-        podcast.length = req.body.length;
-        podcast.seasons = req.body.seasons;
-        podcast.type = req.body.type;
-        podcast.genre = req.body.genre;
-        podcast.hostCount = req.body.hostCount;
-        podcast.guest = req.body.guest;
-        podcast.save(function(err) {
-            res.redirect(`/podcasts/${podcasts._id}`);
-        });
+    Podcast.findByIdAndUpdate(req.params.id, req.body).then(function(podcast) {
+        res.redirect(`/podcasts/${podcast._id}`);
     });
+
 }
