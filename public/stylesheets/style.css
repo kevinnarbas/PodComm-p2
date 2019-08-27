@@ -96,3 +96,7 @@ nav ul li {
 .show-button * {
   display: inline-block;
 }
+
+.landing-page {
+  color: green;
+}

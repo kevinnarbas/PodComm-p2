@@ -26,7 +26,7 @@ function index(req, res) {
 
 function newPodcast(req, res) {
     res.render('podcasts/new', {
-        title: 'PodComm',
+        title: 'Add A Pea To Your Pod Here!',
         user: req.user,
     });
 }
@@ -52,7 +52,7 @@ function show(req, res) {
     Podcast.findById(req.params.id, function(err, podcasts) {
         res.render('podcasts/show', {
             podcasts,
-            title: 'PodComm',
+            title: 'Details/Review Page',
             user: req.user
         });
         console.log(req.user)
@@ -66,7 +66,7 @@ function search(req, res, next) {
         console.log('looky here',podcasts);
         res.render('podcasts/search', { 
             podcasts, 
-            title: 'PodComm',
+            title: 'Search Page',
             user: req.user,
             podTitle: req.query.podTitle,
         });
@@ -92,7 +92,7 @@ function edit(req, res) {
     Podcast.findById(req.params.id, function(err, podcasts) {
         res.render('podcasts/edit', {
         podcasts, 
-        title: 'PodComm',
+        title: 'Edit Page',
         user: req.user,
         });
     });
