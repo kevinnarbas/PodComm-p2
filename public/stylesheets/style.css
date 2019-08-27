@@ -3,8 +3,14 @@ body {
 }
 
 header {
+  background-color: #A6D5AE;
   padding: 20px;
   padding-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 main {
@@ -74,7 +80,19 @@ nav ul li {
   text-transform: capitalize;
 }
 
-.user-index {
+.user-index{
+  background-color: #A6D5AE;
+  height: 29vh;
+  margin: 2px 3px;
+  padding: 24px 0 0 24px;
+
+}
+
+.user-index li {
   list-style: none;
   text-transform: capitalize; 
+}
+
+.show-button * {
+  display: inline-block;
 }
