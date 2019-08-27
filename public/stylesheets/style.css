@@ -57,11 +57,12 @@ nav ul li {
 }
 
 .search-items {
-  background-color: #D6FFD8;
+  background-color: #A6D5AE;
   height: 29vh;
   margin: 2px;
   padding: 24px 0 0 24px;
   overflow: scroll;
+  border-radius: 12px;
 }
 
 .search-items li {
@@ -85,7 +86,7 @@ nav ul li {
   height: 29vh;
   margin: 2px 3px;
   padding: 24px 0 0 24px;
-
+  border-radius: 12px;
 }
 
 .user-index li {
