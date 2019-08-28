@@ -142,6 +142,7 @@ nav ul li {
 }
 
 .main-title {
+  font-family: 'Seymour One', sans-serif;
   color: transparent;
   font-weight: 900;
   font-size: 9rem;
@@ -150,5 +151,5 @@ nav ul li {
   -webkit-background-clip: text;
   background-clip: text;
   background-size: 350%;
-  animation: title-animation 6s infinite alternate;
+  animation: title-animation 5s infinite alternate;
 }
