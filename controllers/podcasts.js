@@ -92,7 +92,7 @@ function edit(req, res) {
     Podcast.findById(req.params.id, function(err, podcasts) {
         res.render('podcasts/edit', {
         podcasts, 
-        title: 'Edit Page',
+        title: 'Genetically Modify Your Pea',
         user: req.user,
         });
     });
