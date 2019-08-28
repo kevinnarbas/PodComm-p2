@@ -10,14 +10,14 @@
 <% podcasts.forEach(function(p) { %>
     <div class="three columns search-items">
       <ul>
-        <li class="search-name" >Title: <%= p.title %></li>
-        <li>Length: <%= p.length %></li>
-        <li>Seasons: <%= p.seasons %></li>
-        <li>Type: <%= p.type %></li>
-        <li>Host Count: <%= p.hostCount %></li>
-        <li>Guests? <%= p.guest %></li>
+        <li class="search-name" ><b>Title:</b> <%= p.title %></li>
+        <li><b>Length:</b> <%= p.length %></li>
+        <li><b>Seasons:</b> <%= p.seasons %></li>
+        <li><b>Type:</b> <%= p.type %></li>
+        <li><b>Host Count:</b> <%= p.hostCount %></li>
+        <li><b>Guests?</b> <%= p.guest %></li>
         <% p.reviews.forEach(function(r) { %>
-          <li class="latest-review">Latest Review: <%= r.content.charAt(0).toUpperCase() + r.content.slice(1) %> <%= r.rating %> rating!</li>
+          <li class="latest-review"><b>Latest Review:</b> <%= r.content.charAt(0).toUpperCase() + r.content.slice(1) %> <%= r.rating %> rating!</li>
           <% }) %>
       </ul>
     </div>

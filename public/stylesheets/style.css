@@ -87,6 +87,7 @@ nav ul li {
   margin: 2px 3px;
   padding: 24px 0 0 24px;
   border-radius: 12px;
+  overflow: scroll;
 }
 
 .user-index li {
