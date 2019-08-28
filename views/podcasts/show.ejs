@@ -50,9 +50,9 @@
 </form>
 <div class="show-button">
   <a href="/podcasts" class="button button-primary">Go Back</a>
-  <a href="/podcasts/<%= podcasts.id %>/edit" class="button">Edit Pea</a>
+  <a href="/podcasts/<%= podcasts.id %>/edit" class="button button-primary">Edit Pea</a>
   <form action="/podcasts/<%= podcasts.id %>?_method=DELETE" method="POST">
-  <input type="submit" value="Delete">
+  <input type="submit" value="Delete" class="button button-primary">
   </form>
 </div>
 

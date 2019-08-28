@@ -59,10 +59,12 @@ nav ul li {
 .search-items {
   background-color: #A6D5AE;
   height: 29vh;
-  margin: 2px;
+  margin: 4px 6px;
   padding: 24px 0 0 24px;
   overflow: scroll;
   border-radius: 12px;
+  -webkit-box-shadow: 0px 0px 7px 0px #8fbc8e; 
+  box-shadow: 0px 0px 7px 0px #8fbc8e;
 }
 
 .search-items li {
@@ -84,10 +86,12 @@ nav ul li {
 .user-index{
   background-color: #A6D5AE;
   height: 29vh;
-  margin: 2px 3px;
+  margin: 4px 6px;
   padding: 24px 0 0 24px;
   border-radius: 12px;
   overflow: scroll;
+  -webkit-box-shadow: 0px 0px 7px 0px #8fbc8e; 
+  box-shadow: 0px 0px 7px 0px #8fbc8e;
 }
 
 .user-index li {
@@ -101,4 +105,22 @@ nav ul li {
 
 .landing-page {
   color: green;
+}
+
+.pea-details {
+  background-image: linear-gradient(45deg, #ade4ca, #A6D5AE, #8fbc8e, #64A466);
+  background-size: 300%;
+  background-position: left;
+  transition: background-position 1s;
+  -webkit-box-shadow: 0px 0px 12px 0px #8fbc8e; 
+  box-shadow: 0px 0px 12px 0px #8fbc8e;
+}
+
+.pea-details:hover,
+.pea-details:focus {
+  background-position: right;
+}
+
+.columns:first-child {
+  margin-left: 6px;
 }
