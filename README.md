@@ -43,3 +43,34 @@ Some problems Ive come in contact and dealt with are:
 - Other refactoring things like the way I reference the search items and adding some things to schemas that then needed to be changed on all pages they appear on.
 - Figuring out how to work with Skeleton on the fly.
 - Having to add a bit more pages then I'd have hoped for.
+
+
+---
+
+## Heres a more updated view of my PodComm
+
+#### This picture doesnt do this landing page any justice because the main title actually gradually goes light to dark
+
+![Imgur](https://i.imgur.com/wLApQjc.png)
+
+#### This is the main landing page once a user logs in and has added some 'peas' to their *pod* 
+
+![Imgur](https://i.imgur.com/J4Z9DbC.png)
+
+#### This is the 'new' page where a user can add a 'pea' to their *pod*.
+
+![Imgur](https://i.imgur.com/Ejm2R7P.png)
+
+
+#### Here we have the pea deets (podcast details) page displaying the information the user has entered in the 'new' page and an enrichment (review) of the podcast that the user can enter 
+
+![Imgur](https://i.imgur.com/b3N2hz1.png)
+
+#### Here is the edit page for a specific podcast if you left something out or just want to edit it in any way.
+
+![Imgur](https://i.imgur.com/74SDgI9.png)
+
+#### The next two show the search page and just how elements come up once searched.
+
+![Imgur](https://i.imgur.com/kkEMfwC.png)
+![Imgur](https://i.imgur.com/wfzzOxr.png)
