@@ -12,7 +12,7 @@ router.get('/', function index(req, res) {
   User.find(modelQuery, function(err, users) {
     if (err) return next(err);
     res.render('index', {
-      title: 'PodComm',
+      title: '',
       users,
       user: req.user,
       name: req.query.name,

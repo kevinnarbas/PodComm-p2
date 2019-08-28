@@ -124,3 +124,31 @@ nav ul li {
 .columns:first-child {
   margin-left: 6px;
 }
+
+@keyframes title-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.div-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-title {
+  color: transparent;
+  font-weight: 900;
+  font-size: 9rem;
+  background-image: linear-gradient(45deg, #ADE4CA, #A6D5AE, #8FBC8E,
+   #64A466, #2E8B56);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 350%;
+  animation: title-animation 6s infinite alternate;
+}
