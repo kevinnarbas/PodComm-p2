@@ -182,7 +182,7 @@ td:last-child {
 .button-primary:hover,
 .button-primary:focus {
   animation: logged-in-user 250ms infinite;
-  transition: background-color 250ms;
+  transition: background-color 500ms;
 }
 
 /* ========== keyframes ========== */

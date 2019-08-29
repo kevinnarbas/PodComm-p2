@@ -8,12 +8,12 @@ Inspiration for this app came from my love of podcasts and not finding a hub for
 ---
 
 ## Technologies used:
-- HTML, CSS, JS
-- Node.JS
-- MongoDB
-- Express
-- Mongoose
-- OAuth authorization
+* HTML, CSS, JS
+* MEN Stack
+  * MongoDB
+  * Express
+  * Node.JS
+* OAuth authorization
 
 ---
 
