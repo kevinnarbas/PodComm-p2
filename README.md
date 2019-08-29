@@ -74,3 +74,25 @@ Some problems Ive come in contact and dealt with are:
 
 ![Imgur](https://i.imgur.com/kkEMfwC.png)
 ![Imgur](https://i.imgur.com/wfzzOxr.png)
+
+---
+
+## Here I did another refactor
+#### Style-wise that is. Functionality is that same so I'll try and keep things consistent. All i really added was some icons to make the pages look a little less flat.  I also added some animations to the buttons.  Originally it was just supposed to be the 'Already logged in?' button on the landing page if you found yourself back at that page somehow, but I had the idea of just adding it to all the buttons to make them more fun.  I already had a fade animation on the 'Pea Deets' so i didnt want to add onto that but since skeleton uses two classes for buttons I used that to my advantage. 
+
+Heres the updated pics 
+
+Landing Page
+![Imgur](https://i.imgur.com/uZQTPWs.png)
+User Landing Page
+![Imgur](https://i.imgur.com/fHszmdx.png)
+User Add Page
+![Imgur](https://i.imgur.com/TlwXrnH.png)
+User Show Page
+![Imgur](https://i.imgur.com/Myg6WSB.png)
+User edit page
+![Imgur](https://i.imgur.com/Q6gUX8w.png)
+Search pages
+![Imgur](https://i.imgur.com/AcUTuYK.png)
+![Imgur](https://i.imgur.com/OdXuryw.png)
+
