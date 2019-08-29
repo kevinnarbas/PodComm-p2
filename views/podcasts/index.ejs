@@ -5,15 +5,15 @@
 <% } else { %>
   <h3><%= peas.podcasts.length %> Peas In Your Pod!</h3>
 <% } %>
-<a href="/podcasts/new" class="button button-primary">Add a podcast</a>
-<a href="/podcasts/search" class="button button-primary">Search podcasts</a>
+<a href="/podcasts/new" class="button button-primary"> <img class="butt-img" src="/images/add-icon.png" alt=""> Add a podcast</a>
+<a href="/podcasts/search" class="button button-primary"><img class="butt-img" src="/images/search-icon.png" alt="search-img"> Search Podcast</a>
 
 <div class="row">
 <% peas.podcasts.forEach(function(p) { %>
   <div class="four columns user-index">  
     <ul>
-      <li><h4><%= p.title %></h4></li>
-      <li><a href="podcasts/<%= p.id %>" class="button pea-details">Pea Deets</a></li>
+      <li><h4 class="index-title"><%= p.title %></h4></li>
+      <li><a href="podcasts/<%= p.id %>" class="button pea-details"><img class="butt-img" src="/images/deets-icon.png" alt=""> Pea Deets</a></li>
     </ul>
   </div>
   <% }); %>

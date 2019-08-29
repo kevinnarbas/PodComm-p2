@@ -1,7 +1,8 @@
 <%- include('../partials/header') %>
 
+<h3 class="show-title"><%= podcasts.title %></h3>
+
 <ul>
-    <li><b>Title:</b> <%= podcasts.title %></li>
     <li><b>Length:</b> <%= podcasts.length %></li>
     <li><b>Seasons:</b> <%= podcasts.seasons %></li>
     <li><b>Type:</b> <%= podcasts.type %></li>
@@ -46,13 +47,13 @@
     <option value="4">4</option>
     <option value="5">5</option>
   </select>
-  <input type="submit" class="button button-primary">
+  <button type="submit" class="button button-primary" >Submit <img class="butt-img" src="/images/submit-icon.png" alt="submit-icon"></button>
 </form>
 <div class="show-button">
-  <a href="/podcasts" class="button button-primary">Go Back</a>
-  <a href="/podcasts/<%= podcasts.id %>/edit" class="button button-primary">Edit Pea</a>
+    <a href="/podcasts" class="button button-primary"><img class="butt-img" src="/images/back-arrrow.png" alt=""> Go Back</a>
+  <a href="/podcasts/<%= podcasts.id %>/edit" class="button button-primary"><img class="butt-img" src="/images/edit-icon.png" alt=""> Edit Pea</a>
   <form action="/podcasts/<%= podcasts.id %>?_method=DELETE" method="POST">
-  <input type="submit" value="Delete" class="button button-primary">
+  <button type="submit" class="button button-primary"> <img class="butt-img" src="/images/delete-icon.png" alt=""> Delete</button>
   </form>
 </div>
 

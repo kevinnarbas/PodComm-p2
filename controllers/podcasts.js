@@ -52,7 +52,7 @@ function show(req, res) {
     Podcast.findById(req.params.id, function(err, podcasts) {
         res.render('podcasts/show', {
             podcasts,
-            title: 'Details/Review Page',
+            title: '',
             user: req.user
         });
         console.log(req.user)
