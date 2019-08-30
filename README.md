@@ -96,3 +96,11 @@ Search pages
 ![Imgur](https://i.imgur.com/AcUTuYK.png)
 ![Imgur](https://i.imgur.com/OdXuryw.png)
 
+---
+
+## Going forward:
+
+Going forward id like to maybe change this to a responsive one or two page app with the forms coming in instead of going to a whole new page.
+
+Also add the ability to like and comment on other peoples posts and show how many poeple like it on the user page.
+
